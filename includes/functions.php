@@ -21,7 +21,6 @@ function get_page_title($title = '') {
     }
 }
 
-
 function db() {
     try{
         return new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=utf8', DB_USER, DB_PASS,
@@ -63,9 +62,53 @@ function add_user($login, $pass) {
 
 function register_user($auth_data) {
     if (empty($auth_data) || !isset($auth_data['login']) || empty($auth_data['login'])) return false;
-    debug($auth_data);
+
+    $user = get_user_info($auth_data['login']);
+    if (!empty($user)) {
+        $_SESSION['error'] = 'Пользователь ' . $auth_data['login'] . ' уже существует';
+        header("Location: " . get_url('register.php'));
+        die;
+    }
+    if ($auth_data['pass'] !== $auth_data['pass2']) {
+        $_SESSION['error'] = 'Пароли не совпадают';
+        header("Location: " . get_url('register.php'));
+        die;
+    }
+    if (add_user($auth_data['login'], $auth_data['pass'])) {
+        header("Location: " . get_url());
+        die;
+    }
 }
 
 function login($auth_data) {
 
+    if (empty($auth_data) || !isset($auth_data['login']) || empty($auth_data['login'])) return false;
+
+    $user = get_user_info($auth_data['login']);
+
+    if (empty($user)){
+        $_SESSION['error'] = 'Пользователь ' . $auth_data['login'] . ' не найден';
+        header("Location: " . get_url(''));
+        die;
+    }
+
+    if (password_verify($auth_data['pass'], $user['pass'])) {
+        $_SESSION['user'] = $user;
+        $_SESSION['error'] = '';
+        header("Location: " . get_url('user_posts.php?id=' . $user['id']));
+        die;
+    } else {
+        $_SESSION['error'] = 'Пароль неверный';
+        header("Location: " . get_url(''));
+        die;
+    }
+}
+
+function get_error_message() {
+    $error = '';
+    if (isset($_SESSION['error']) && !empty($_SESSION['error'])) {
+        $error = $_SESSION['error'];
+        $_SESSION['error'] = '';
+    }
+    return $error;
 }
