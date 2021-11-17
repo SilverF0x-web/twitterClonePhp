@@ -61,9 +61,9 @@ function add_user($login, $pass) {
 }
 
 function register_user($auth_data) {
-    if (empty($auth_data) || !isset($auth_data['login']) || empty($auth_data['login'])) return false;
-
+    if (empty($auth_data) || !isset($auth_data['login']) || empty($auth_data['login'] || !isset($auth_data['password']) || empty($auth_data['password']))) return false;
     $user = get_user_info($auth_data['login']);
+
     if (!empty($user)) {
         $_SESSION['error'] = 'Пользователь ' . $auth_data['login'] . ' уже существует';
         header("Location: " . get_url('register.php'));
@@ -82,7 +82,7 @@ function register_user($auth_data) {
 
 function login($auth_data) {
 
-    if (empty($auth_data) || !isset($auth_data['login']) || empty($auth_data['login'])) return false;
+    if (empty($auth_data) || !isset($auth_data['login']) || empty($auth_data['login'] || !isset($auth_data['password']) || empty($auth_data['password']))) return false;
 
     $user = get_user_info($auth_data['login']);
 
