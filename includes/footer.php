@@ -1,13 +1,6 @@
-<?php
-
-include_once "functions.php";
-
-?>
-
-<?php if (isset($_SESSION['user']['id'])) { ?>
  </main>
 </div>
-<?php } else { ?>
+<?php if (!logged_in()) { ?>
  </main>
 </div>
     <div class="modal overlay">
@@ -34,7 +27,6 @@ include_once "functions.php";
         </div>
     </div>
 <?php } ?>
-
 <script src=<?php echo get_url('js/scripts.js'); ?>></script>
 <?php if ($error) echo '<script>openModal();</script>' ?>
 </body>
