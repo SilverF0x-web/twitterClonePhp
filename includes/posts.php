@@ -9,10 +9,12 @@
                         <div class="tweet__wrapper">
                             <header class="tweet__header">
                                 <h3 class="tweet-author"><?php echo $post['name']; ?>
-                                    <a href="<?php echo get_url('user_posts.php?id=' . $post['user_id']); ?>" class="tweet-author__add tweet-author__nickname">@<?php echo $post['login']; ?></a>
+                                    <a class="tweet-author__add tweet-author__nickname" href="<?php echo get_url('user_posts.php?id=' . $post['user_id']); ?>">@<?php echo $post['login']; ?></a>
                                     <time class="tweet-author__add tweet__date"><?php echo date('d.m.y в H:i', strtotime($post['date'])); ?></time>
                                 </h3>
-                                <button class="tweet__delete-button chest-icon"></button>
+                                <?php if (logged_in() && $post['user_id'] == $_SESSION['user']['id']) { ?>
+                                    <a class="tweet__delete-button chest-icon" href="<?php echo get_url('includes/delete_post.php?id=' . $post['id']); ?>"></a>
+                                <?php } ?>
                             </header>
                             <div class="tweet-post">
                                 <p class="tweet-post__text"><?php echo $post['text']; ?></p>

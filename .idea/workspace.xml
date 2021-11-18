@@ -3,15 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="4b41d3bb-7226-4497-b70a-73180815570c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/footer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/functions.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/header.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/posts.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/tweet_form.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/tweet_form.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/register.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/user_posts.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,12 +37,14 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/twitterClonePhp" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\OpenServer\domains\localhost\twitterClonePhp" />
+      <recent name="C:\OpenServer\domains\localhost\twitterClonePhp\includes" />
       <recent name="C:\OpenServer\domains\localhost" />
     </key>
   </component>
@@ -65,7 +62,7 @@
       <workItem from="1637060263036" duration="33000" />
       <workItem from="1637060298992" duration="11000" />
       <workItem from="1637154732837" duration="1257000" />
-      <workItem from="1637215458059" duration="1283000" />
+      <workItem from="1637215458059" duration="7891000" />
     </task>
     <servers />
   </component>
